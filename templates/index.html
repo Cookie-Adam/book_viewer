@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Viewer</title>
+    <style>
+        body { font-family: Georgia, serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .error { color: #b00020; }
+    </style>
+</head>
+<body>
+    <h1>Book Viewer</h1>
+    {% if error %}<p class="error">Book not found. Pick one below:</p>{% endif %}
+    <ul>
+        {% for b in books %}
+        <li><a href="/book/{{ b }}">{{ b }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
